@@ -3,6 +3,7 @@ import Container from './components/layout/Container'
 import Footer from './components/Footer'
 import HeroSection from './sections/HeroSection'
 import AboutSection from './sections/AboutSection'
+import SkillsSection from './sections/SkillsSection'
 import Navbar from './components/Navbar'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         >
           <HeroSection />
           <AboutSection />
+          <SkillsSection />
         </motion.main>
       </Container>
       <Footer />
