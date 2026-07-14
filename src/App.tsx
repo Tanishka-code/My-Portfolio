@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import Container from './components/layout/Container'
 import Footer from './components/Footer'
 import HeroSection from './sections/HeroSection'
+import AboutSection from './sections/AboutSection'
 import Navbar from './components/Navbar'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           className="space-y-20 py-10"
         >
           <HeroSection />
+          <AboutSection />
         </motion.main>
       </Container>
       <Footer />
