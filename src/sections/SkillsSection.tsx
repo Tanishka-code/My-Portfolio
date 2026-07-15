@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion'
 import { FaDatabase, FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa'
-import { SiTypescript, SiTailwindcss, SiFramer, SiMongodb, SiPostgresql, SiPython, SiJavascript, SiDocker } from 'react-icons/si'
+import { SiTypescript, SiTailwindcss, SiFramer, SiMongodb, SiJavascript, SiDocker } from 'react-icons/si'
 
 const skillCategories = [
   {
     category: 'Frontend',
     skills: [
       { title: 'React', icon: FaReact, level: 'Advanced' },
-      { title: 'TypeScript', icon: SiTypescript, level: 'Advanced' },
+      { title: 'TypeScript', icon: SiTypescript, level: 'Basic' },
       { title: 'Tailwind CSS', icon: SiTailwindcss, level: 'Advanced' },
       { title: 'Framer Motion', icon: SiFramer, level: 'Intermediate' },
     ],
@@ -24,14 +24,12 @@ const skillCategories = [
     category: 'Database',
     skills: [
       { title: 'MongoDB', icon: SiMongodb, level: 'Intermediate' },
-      { title: 'PostgreSQL', icon: SiPostgresql, level: 'Intermediate' },
     ],
   },
   {
     category: 'Programming Languages',
     skills: [
       { title: 'JavaScript', icon: SiJavascript, level: 'Advanced' },
-      { title: 'Python', icon: SiPython, level: 'Intermediate' },
     ],
   },
   {

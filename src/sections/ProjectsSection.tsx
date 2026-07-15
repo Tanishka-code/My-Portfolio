@@ -1,8 +1,18 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import ProjectCard from '../components/ProjectCard'
-import { featuredProjects, otherProjects } from '../data/projects'
+import ProjectModal from '../components/ProjectModal'
+import { featuredProjects, type Project } from '../data/projects'
 
 export default function ProjectsSection() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const handleSelectProject = (project: Project) => {
+    setSelectedProject(project)
+    setModalOpen(true)
+  }
+
   return (
     <section id="projects" className="space-y-10 rounded-[2.5rem] border border-white/10 bg-surface/90 p-6 shadow-[0_30px_80px_rgba(0,0,0,0.16)] sm:p-10">
       <div className="space-y-4">
@@ -22,29 +32,14 @@ export default function ProjectsSection() {
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{ duration: 0.65, ease: 'easeOut', delay: index * 0.08 }}
               >
-                <ProjectCard project={project} />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-text">Other Projects</h3>
-          <div className="grid gap-6 lg:grid-cols-2">
-            {otherProjects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.06 }}
-              >
-                <ProjectCard project={project} />
+                <ProjectCard project={project} onSelect={handleSelectProject} />
               </motion.div>
             ))}
           </div>
         </div>
       </div>
+
+      <ProjectModal project={selectedProject} open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   )
 }

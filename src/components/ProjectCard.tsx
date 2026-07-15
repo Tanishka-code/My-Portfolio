@@ -5,16 +5,24 @@ import type { Project } from '../data/projects'
 
 type ProjectCardProps = {
   project: Project
+  onSelect: (project: Project) => void
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
-  const [isOpen, setIsOpen] = useState(false)
-
+export default function ProjectCard({ project, onSelect }: ProjectCardProps) {
   return (
     <motion.article
+      onClick={() => onSelect(project)}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault()
+          onSelect(project)
+        }
+      }}
+      role="button"
+      tabIndex={0}
       whileHover={{ y: -6, boxShadow: '0 32px 90px rgba(0,0,0,0.16)' }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
-      className="overflow-hidden rounded-[2rem] border border-white/10 bg-background/95 shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
+      className="cursor-pointer overflow-hidden rounded-[2rem] border border-white/10 bg-background/95 shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
     >
       <div className="relative h-72 overflow-hidden bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.28),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(96,165,250,0.25),_transparent_30%)]" />
@@ -59,47 +67,25 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         <div className="flex flex-wrap gap-3">
-          <Button href={project.githubUrl} variant="secondary" className="min-w-[10rem]">
+          <Button
+            href={project.githubUrl}
+            variant="secondary"
+            className="min-w-[10rem]"
+            onClick={(event) => event.stopPropagation()}
+          >
             GitHub
           </Button>
-          <Button href={project.demoUrl} variant="primary" className="min-w-[10rem]">
-            Live Demo
-          </Button>
+          {project.demoUrl && project.demoUrl !== '#' ? (
+            <Button
+              href={project.demoUrl}
+              variant="primary"
+              className="min-w-[10rem]"
+              onClick={(event) => event.stopPropagation()}
+            >
+              Live Demo
+            </Button>
+          ) : null}
         </div>
-
-        <button
-          type="button"
-          onClick={() => setIsOpen((value) => !value)}
-          className="text-sm font-semibold uppercase tracking-[0.25em] text-primary transition hover:text-secondary"
-        >
-          {isOpen ? 'Hide details' : 'View details'}
-        </button>
-
-        <motion.div
-          initial={false}
-          animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="overflow-hidden"
-        >
-          {isOpen && (
-            <div className="mt-4 space-y-4 rounded-3xl border border-white/10 bg-surface/90 p-5 text-sm leading-7 text-slate-300">
-              <div>
-                <p className="text-sm uppercase tracking-[0.22em] text-secondary">Expanded summary</p>
-                <p className="mt-3">{project.details}</p>
-              </div>
-              <div>
-                <p className="text-sm uppercase tracking-[0.22em] text-secondary">Technology stack</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {project.stack.map((tech) => (
-                    <span key={tech} className="rounded-full bg-white/5 px-3 py-1 text-xs text-slate-300">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-        </motion.div>
       </div>
     </motion.article>
   )

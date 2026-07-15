@@ -1,95 +1,89 @@
+import screenshotCollege from '../assets/project-screenshots/college-discovery-platform.svg'
+import screenshotSmartRoute from '../assets/project-screenshots/smart-route-optimizer.svg'
+import screenshotSpotifyClone from '../assets/project-screenshots/spotify-clone.svg'
+import screenshotPortfolioBuilder from '../assets/project-screenshots/portfolio-builder.svg'
+
 export type Project = {
   title: string
   imageLabel: string
+  screenshotUrl: string
+  screenshotAlt: string
   problem: string
   solution: string
   details: string
   features: string[]
   stack: string[]
+  challenges: string
+  architecture: string
   githubUrl: string
-  demoUrl: string
+  demoUrl?: string
 }
 
 export const featuredProjects: Project[] = [
   {
     title: 'College Discovery Platform',
     imageLabel: 'Campus AI',
-    problem: 'Students struggle to compare programs, culture, and career prospects across colleges.',
+    screenshotUrl: screenshotCollege,
+    screenshotAlt: 'College discovery platform overview',
+    problem: 'Students need a better way to evaluate programs, campuses, and scholarship options.',
     solution:
-      'A smart discovery platform that matches students to institutions based on preferences, budgets, and long-term goals.',
+      'A discovery platform that helps prospective students compare colleges with personalized filters and insights.',
     details:
-      'Designed to help future engineers explore colleges, compare departments, and discover opportunities through intuitive search and personalized recommendations.',
-    features: ['Personalized filters', 'Program comparison', 'Scholarship insights', 'Campus profiles'],
-    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'MongoDB'],
+      'A student-centered web app designed to organize college search results, highlight program fit, and surface scholarship and career information.',
+    features: ['Program comparison', 'Scholarship guidance', 'Campus insights', 'Personalized search'],
+    stack: ['React', 'Tailwind CSS', 'TypeScript'],
+    challenges: 'Keeping the interface easy to scan while presenting multiple college attributes in one view.',
+    architecture: 'Client-side React interface with data-driven filter components and responsive search results.',
     githubUrl: 'https://github.com/Tanishka-code/college-discovery-platform',
-    demoUrl: '#',
   },
   {
     title: 'Smart Route Optimizer',
     imageLabel: 'Map AI',
-    problem: 'Delivery and travel planning often use inefficient routes and miss dynamic traffic conditions.',
+    screenshotUrl: screenshotSmartRoute,
+    screenshotAlt: 'Route optimization interface',
+    problem: 'Routing tools often miss efficient multi-stop travel paths and changing road conditions.',
     solution:
-      'An optimizer that computes efficient routes, adapts to real-time conditions, and minimizes travel time using data-driven logic.',
+      'A route optimizer that proposes shorter paths and more efficient stops for travel and delivery planning.',
     details:
-      'Built to support smarter route planning with an emphasis on flexible inputs, performance, and clean presentation for logistics and travel cases.',
-    features: ['Traffic-aware paths', 'Multi-stop planning', 'ETA accuracy', 'User-friendly map view'],
-    stack: ['React', 'Vite', 'Express', 'PostgreSQL'],
+      'Built to make route planning cleaner by letting users add multiple stops and compare optimized itineraries quickly.',
+    features: ['Multi-stop planning', 'Travel efficiency', 'Route preview', 'User-friendly maps'],
+    stack: ['React', 'Vite', 'Tailwind CSS'],
+    challenges: 'Designing an intuitive planner that simplifies route complexity for everyday users.',
+    architecture: 'React UI with interactive route cards and a flexible planning workflow.',
     githubUrl: 'https://github.com/Tanishka-code/smart-route-optimizer',
-    demoUrl: '#',
   },
   {
     title: 'Spotify Clone',
     imageLabel: 'Music UI',
-    problem: 'Streaming app prototypes rarely balance polished UI with responsive playback controls for learning purposes.',
+    screenshotUrl: screenshotSpotifyClone,
+    screenshotAlt: 'Music streaming interface preview',
+    problem: 'Music interfaces need polished playback controls and modern playlist navigation.',
     solution:
-      'A music streaming interface that mimics modern audio experiences with crisp interactions, playlist flows, and rich UI polish.',
+      'A music app prototype with clean visuals, playlist browsing, and responsive media controls.',
     details:
-      'Focused on building a premium-feeling playback interface, clear navigation, and responsive media sections for a realistic music platform prototype.',
-    features: ['Playlist browsing', 'Playback controls', 'Responsive music cards', 'Animated transitions'],
-    stack: ['React', 'Tailwind CSS', 'Framer Motion', 'Firebase'],
+      'A UI-focused streaming prototype that highlights intuitive playback, playlists, and album navigation.',
+    features: ['Playlist browsing', 'Playback controls', 'Responsive cards', 'Animated transitions'],
+    stack: ['React', 'Tailwind CSS', 'Framer Motion'],
+    challenges: 'Balancing visual polish with a lightweight interface and smooth interactions.',
+    architecture: 'Single-page React layout with animated components and media-focused visuals.',
     githubUrl: 'https://github.com/Tanishka-code/spotify-clone',
-    demoUrl: '#',
   },
   {
     title: 'Portfolio Builder',
     imageLabel: 'Design Studio',
-    problem: 'Developers need a fast way to create a polished portfolio without sacrificing customization.',
+    screenshotUrl: screenshotPortfolioBuilder,
+    screenshotAlt: 'Portfolio builder interface screenshot',
+    problem: 'Early-career developers need a faster way to create polished personal portfolios.',
     solution:
-      'A portfolio generator that helps users assemble elegant pages from reusable components, while staying lightweight and easy to update.',
+      'A portfolio scaffolding concept focused on reusable sections, responsive design, and easy customization.',
     details:
-      'Built as a developer-first portfolio scaffold with strong UX, responsive themes, and easy content management for early-career engineers.',
-    features: ['Customizable sections', 'Responsive templates', 'Live preview', 'Export-ready output'],
+      'A portfolio generator prototype built to help create clean developer presentations with minimal setup.',
+    features: ['Customizable sections', 'Responsive design', 'Clean templates', 'Developer-first UX'],
     stack: ['React', 'Tailwind CSS', 'TypeScript'],
+    challenges: 'Delivering strong design flexibility while keeping the builder interface simple.',
+    architecture: 'Modular React components for portfolio sections and responsive layout templates.',
     githubUrl: 'https://github.com/Tanishka-code/portfolio-builder',
-    demoUrl: '#',
   },
 ]
 
-export const otherProjects: Project[] = [
-  {
-    title: 'InterviewPrep Suite',
-    imageLabel: 'Learning Lab',
-    problem: 'Candidates need a structured way to practice and track interview readiness.',
-    solution:
-      'A study dashboard with curated practice sets, progress tracking, and flashcards for technical preparation.',
-    details:
-      'Designed to support consistent interview practice with clean workflows, review tools, and progress summaries.',
-    features: ['Practice sessions', 'Progress tracking', 'Flashcard mode', 'User notes'],
-    stack: ['React', 'TypeScript', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/Tanishka-code/interviewprep-suite',
-    demoUrl: '#',
-  },
-  {
-    title: 'Hackathon Launchpad',
-    imageLabel: 'Sprint Hub',
-    problem: 'Teams struggle to quickly build MVPs with aligned onboarding and analytics tracking.',
-    solution:
-      'A prototype platform for hackathons that centralizes team workflows, onboarding, and performance metrics.',
-    details:
-      'Focused on delivering rapid MVP structure while maintaining clean design and scalable component architecture.',
-    features: ['Team onboarding', 'Live analytics', 'Task flow', 'Responsive dashboard'],
-    stack: ['React', 'Vite', 'Framer Motion'],
-    githubUrl: 'https://github.com/Tanishka-code/hackathon-launchpad',
-    demoUrl: '#',
-  },
-]
+export const otherProjects: Project[] = []

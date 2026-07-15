@@ -2,11 +2,11 @@ import { motion } from 'framer-motion'
 
 const infoCards = [
   { title: 'B.Tech IT Student', description: 'Strong technical foundation with structured academic learning.' },
-  { title: 'Frontend Development', description: 'Modern React, Tailwind, and responsive design experience.' },
-  { title: 'Backend Development', description: 'API-driven applications with clean architecture principles.' },
-  { title: 'DSA', description: 'Problem solving using data structures and algorithmic thinking.' },
-  { title: 'Hackathons', description: 'Rapid execution of polished prototypes under pressure.' },
-  { title: 'MBA Aspirant', description: 'Future product and business leadership with strategic growth focus.' },
+  { title: 'Frontend Development', description: 'Modern React, Tailwind, and responsive UI experience.' },
+  { title: 'Backend Development', description: 'API-driven applications with clear architecture and strong debugging habits.' },
+  { title: 'CAT/MBA Aspirant', description: 'Preparing for business school while continuing to build product-oriented software.' },
+  { title: 'DSA', description: 'Problem solving with practical algorithms and data structures.' },
+  { title: 'Basic TypeScript', description: 'Familiar with TypeScript syntax and usage for practical React apps.' },
 ]
 
 export default function AboutSection() {
@@ -45,7 +45,7 @@ export default function AboutSection() {
             <p className="text-sm uppercase tracking-[0.3em] text-secondary">About</p>
             <h2 className="text-3xl font-semibold text-text sm:text-4xl">Learning, building, and preparing for the next opportunity.</h2>
             <p className="max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-              I blend academic excellence with hands-on development, building web applications that connect user intent with scalable technology.
+              I blend academic learning with hands-on development, building web applications that connect user intent with scalable technology while preparing for CAT/MBA.
             </p>
           </motion.div>
 
@@ -72,7 +72,7 @@ export default function AboutSection() {
             >
               <p className="text-sm uppercase tracking-[0.28em] text-secondary">Current Degree</p>
               <p className="mt-3 text-base leading-7 text-slate-300">
-                Currently studying Information Technology with practical experience in full-stack development and emerging cloud patterns.
+                Currently studying Information Technology and preparing for CAT/MBA, while gaining practical full-stack experience.
               </p>
             </motion.article>
           </div>

@@ -1,7 +1,7 @@
 type ButtonProps = {
   children: React.ReactNode
   href?: string
-  onClick?: () => void
+  onClick?: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>
   variant?: 'primary' | 'secondary' | 'ghost'
   className?: string
 }
@@ -17,7 +17,7 @@ export default function Button({ children, href, onClick, variant = 'primary', c
 
   if (href) {
     return (
-      <a href={href} className={baseClasses}>
+      <a href={href} onClick={onClick} className={baseClasses}>
         {children}
       </a>
     )
