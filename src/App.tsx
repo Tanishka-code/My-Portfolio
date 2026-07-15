@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import HeroSection from './sections/HeroSection'
 import AboutSection from './sections/AboutSection'
 import SkillsSection from './sections/SkillsSection'
+import ProjectsSection from './sections/ProjectsSection'
 import Navbar from './components/Navbar'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <HeroSection />
           <AboutSection />
           <SkillsSection />
+          <ProjectsSection />
         </motion.main>
       </Container>
       <Footer />
