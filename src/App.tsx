@@ -3,6 +3,7 @@ import Container from './components/layout/Container'
 import Footer from './components/Footer'
 import HeroSection from './sections/HeroSection'
 import AboutSection from './sections/AboutSection'
+import TimelineSection from './sections/TimelineSection'
 import SkillsSection from './sections/SkillsSection'
 import ProjectsSection from './sections/ProjectsSection'
 import Navbar from './components/Navbar'
@@ -21,6 +22,7 @@ function App() {
         >
           <HeroSection />
           <AboutSection />
+          <TimelineSection />
           <SkillsSection />
           <ProjectsSection />
         </motion.main>
