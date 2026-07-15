@@ -6,6 +6,7 @@ import AboutSection from './sections/AboutSection'
 import TimelineSection from './sections/TimelineSection'
 import SkillsSection from './sections/SkillsSection'
 import ProjectsSection from './sections/ProjectsSection'
+import Contact from './components/Contact'
 import Navbar from './components/Navbar'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <TimelineSection />
           <SkillsSection />
           <ProjectsSection />
+          <Contact />
         </motion.main>
       </Container>
       <Footer />
