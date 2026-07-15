@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { AiOutlineClose } from 'react-icons/ai'
 import type { Project } from '../data/projects'
@@ -20,6 +20,12 @@ const modalVariants = {
 }
 
 export default function ProjectModal({ project, open, onClose }: ProjectModalProps) {
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null)
+
+  const handleBackdropClick = () => {
+    onClose()
+  }
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -29,6 +35,10 @@ export default function ProjectModal({ project, open, onClose }: ProjectModalPro
 
     document.body.style.overflow = open ? 'hidden' : ''
     window.addEventListener('keydown', handleKeyDown)
+
+    if (open && closeButtonRef.current) {
+      closeButtonRef.current.focus()
+    }
 
     return () => {
       document.body.style.overflow = ''
@@ -49,16 +59,22 @@ export default function ProjectModal({ project, open, onClose }: ProjectModalPro
           initial="hidden"
           animate="visible"
           exit="hidden"
+          onClick={handleBackdropClick}
         >
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
             className="relative mx-auto w-full max-w-6xl max-h-[calc(100vh-4rem)] overflow-hidden rounded-[2rem] border border-white/10 bg-surface/95 shadow-[0_40px_120px_rgba(0,0,0,0.35)]"
             variants={modalVariants}
             initial="hidden"
             animate="visible"
             exit="hidden"
             transition={{ duration: 0.3, ease: 'easeOut' }}
+            onClick={(event) => event.stopPropagation()}
           >
             <button
+              ref={closeButtonRef}
               type="button"
               aria-label="Close project details"
               onClick={onClose}
@@ -69,10 +85,10 @@ export default function ProjectModal({ project, open, onClose }: ProjectModalPro
 
             <div className="grid max-h-[calc(100vh-7rem)] gap-10 overflow-y-auto p-8 lg:grid-cols-[1.15fr_0.85fr] lg:p-10">
               <div className="space-y-6">
-                <img src={project.screenshotUrl} alt={project.screenshotAlt} className="h-80 w-full rounded-[1.75rem] object-cover" />
+                <img src={project.screenshotUrl} alt={project.screenshotAlt} loading="lazy" decoding="async" className="h-80 w-full rounded-[1.75rem] object-cover" />
                 <div className="space-y-3">
                   <p className="text-sm uppercase tracking-[0.28em] text-secondary">Project overview</p>
-                  <h2 className="text-3xl font-semibold text-text sm:text-4xl">{project.title}</h2>
+                  <h2 id="project-modal-title" className="text-3xl font-semibold text-text sm:text-4xl">{project.title}</h2>
                   <p className="text-base leading-8 text-slate-300">{project.solution}</p>
                 </div>
 
@@ -123,11 +139,11 @@ export default function ProjectModal({ project, open, onClose }: ProjectModalPro
                 <div className="rounded-[1.75rem] border border-white/10 bg-background/90 p-4">
                   <p className="text-sm uppercase tracking-[0.24em] text-secondary">Links</p>
                   <div className="mt-4 flex flex-col gap-3">
-                    <a href={project.githubUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-3xl bg-white/5 px-4 py-3 text-sm font-semibold text-text transition hover:bg-white/10">
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-3xl bg-white/5 px-4 py-3 text-sm font-semibold text-text transition hover:bg-white/10">
                       GitHub
                     </a>
                     {project.demoUrl && project.demoUrl !== '#' ? (
-                      <a href={project.demoUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-3xl bg-primary px-4 py-3 text-sm font-semibold text-background transition hover:bg-secondary">
+                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-3xl bg-primary px-4 py-3 text-sm font-semibold text-background transition hover:bg-secondary">
                         Live Demo
                       </a>
                     ) : null}

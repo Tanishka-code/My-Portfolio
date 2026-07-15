@@ -75,6 +75,7 @@ export default function Navbar() {
 
         <button
           type="button"
+          aria-controls="mobile-menu"
           aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((value) => !value)}

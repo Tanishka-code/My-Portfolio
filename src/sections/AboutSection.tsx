@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import SectionHeading from '../components/SectionHeading'
 
 const infoCards = [
   { title: 'B.Tech IT Student', description: 'Strong technical foundation with structured academic learning.' },

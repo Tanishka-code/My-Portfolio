@@ -144,47 +144,68 @@ export default function Contact() {
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="space-y-2 text-sm text-slate-300">
                   <span>Name</span>
-                  <input
+                      <input
+                    id="contact-name"
+                    name="name"
+                    aria-required="true"
+                    aria-invalid={Boolean(errors.name)}
+                    aria-describedby={errors.name ? 'contact-name-error' : undefined}
                     value={values.name}
                     onChange={(event) => handleChange('name', event.target.value)}
                     className="h-14 w-full rounded-3xl border border-white/10 bg-surface/80 px-4 text-text outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
                     placeholder="Your name"
                   />
-                  {errors.name ? <p className="text-xs text-rose-400">{errors.name}</p> : null}
+                  {errors.name ? <p id="contact-name-error" className="text-xs text-rose-400">{errors.name}</p> : null}
                 </label>
 
                 <label className="space-y-2 text-sm text-slate-300">
                   <span>Email</span>
                   <input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    aria-required="true"
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? 'contact-email-error' : undefined}
                     value={values.email}
                     onChange={(event) => handleChange('email', event.target.value)}
                     className="h-14 w-full rounded-3xl border border-white/10 bg-surface/80 px-4 text-text outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
                     placeholder="you@example.com"
                   />
-                  {errors.email ? <p className="text-xs text-rose-400">{errors.email}</p> : null}
+                  {errors.email ? <p id="contact-email-error" className="text-xs text-rose-400">{errors.email}</p> : null}
                 </label>
               </div>
 
               <label className="space-y-2 text-sm text-slate-300">
                 <span>Subject</span>
                 <input
+                  id="contact-subject"
+                  name="subject"
+                  aria-required="true"
+                  aria-invalid={Boolean(errors.subject)}
+                  aria-describedby={errors.subject ? 'contact-subject-error' : undefined}
                   value={values.subject}
                   onChange={(event) => handleChange('subject', event.target.value)}
                   className="h-14 w-full rounded-3xl border border-white/10 bg-surface/80 px-4 text-text outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
                   placeholder="Project idea, internship, or question"
                 />
-                {errors.subject ? <p className="text-xs text-rose-400">{errors.subject}</p> : null}
+                {errors.subject ? <p id="contact-subject-error" className="text-xs text-rose-400">{errors.subject}</p> : null}
               </label>
 
               <label className="space-y-2 text-sm text-slate-300">
                 <span>Message</span>
                 <textarea
+                  id="contact-message"
+                  name="message"
+                  aria-required="true"
+                  aria-invalid={Boolean(errors.message)}
+                  aria-describedby={errors.message ? 'contact-message-error' : undefined}
                   value={values.message}
                   onChange={(event) => handleChange('message', event.target.value)}
                   className="min-h-[180px] w-full rounded-[1.5rem] border border-white/10 bg-surface/80 px-4 py-4 text-text outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
                   placeholder="Tell me more about your opportunity or question..."
                 />
-                {errors.message ? <p className="text-xs text-rose-400">{errors.message}</p> : null}
+                {errors.message ? <p id="contact-message-error" className="text-xs text-rose-400">{errors.message}</p> : null}
               </label>
 
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

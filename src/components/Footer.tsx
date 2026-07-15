@@ -49,7 +49,7 @@ export default function Footer() {
                     key={item.label}
                     href={item.href}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     aria-label={item.label}
                     className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-background/80 text-slate-200 transition hover:border-primary hover:text-primary"
                   >
@@ -60,13 +60,14 @@ export default function Footer() {
 
               <div className="grid gap-2 sm:grid-cols-2">
                 <a
-                  href="#"
+                  href="mailto:tanishkatawate@gmail.com?subject=Resume Request"
                   className="inline-flex h-10 items-center justify-center rounded-3xl border border-white/10 bg-primary px-4 text-[11px] font-semibold text-background transition hover:bg-secondary"
                 >
                   Resume
                 </a>
                 <a
                   href="#home"
+                  aria-label="Scroll to top"
                   className="inline-flex h-10 items-center justify-center rounded-3xl border border-white/10 bg-white/5 px-4 text-[11px] font-semibold text-slate-200 transition hover:border-primary hover:text-primary"
                 >
                   Back to top

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import ProjectCard from '../components/ProjectCard'
 import ProjectModal from '../components/ProjectModal'
+import SectionHeading from '../components/SectionHeading'
 import { featuredProjects, type Project } from '../data/projects'
 
 export default function ProjectsSection() {

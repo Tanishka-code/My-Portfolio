@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { FaDatabase, FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa'
 import { SiTypescript, SiTailwindcss, SiFramer, SiMongodb, SiJavascript, SiDocker } from 'react-icons/si'
+import SectionHeading from '../components/SectionHeading'
 
 const skillCategories = [
   {
@@ -60,10 +61,11 @@ export default function SkillsSection() {
           transition={{ duration: 0.7, ease: 'easeOut' }}
           className="space-y-3"
         >
-          <p className="text-sm uppercase tracking-[0.28em] text-secondary">Skills</p>
-          <h2 className="text-3xl font-semibold text-text sm:text-4xl">
-            Modern engineering skills with a polished technical stack.
-          </h2>
+          <SectionHeading
+            id="skills-heading"
+            title="Skills"
+            description="Modern engineering skills with a polished technical stack."
+          />
           <p className="max-w-2xl text-base leading-7 text-slate-300">
             Each category shows the tools and concepts I use to build responsive, performant, and scalable applications.
           </p>

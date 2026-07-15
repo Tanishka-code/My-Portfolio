@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import SectionHeading from '../components/SectionHeading'
 
 const timelineEvents = [
   {
@@ -35,8 +36,11 @@ export default function TimelineSection() {
   return (
     <section id="timeline" className="rounded-[2.5rem] border border-white/10 bg-surface/90 p-6 shadow-[0_30px_80px_rgba(0,0,0,0.16)] sm:p-10">
       <div className="space-y-4">
-        <p className="text-sm uppercase tracking-[0.28em] text-secondary">Timeline</p>
-        <h2 className="text-3xl font-semibold text-text sm:text-4xl">My journey so far and where I’m headed.</h2>
+        <SectionHeading
+          id="timeline-heading"
+          title="Timeline"
+          description="My journey so far and where I’m headed."
+        />
         <p className="max-w-2xl text-base leading-7 text-slate-300">
           A timeline of education, hackathon experience, certifications, and future CAT/MBA goals, designed to reflect growth across both technical and strategic paths.
         </p>
@@ -78,8 +82,7 @@ export default function TimelineSection() {
                   <div className="hidden md:block" />
                 )}
 
-                <div className="relative flex items-center justify-center">
-                  <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-white/10 md:block" />
+                        <div className="relative flex items-center justify-center">
                   <span className="relative z-10 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary shadow-[0_0_0_8px_rgba(59,130,246,0.12)]">
                     <span className="h-2.5 w-2.5 rounded-full bg-background" />
                   </span>

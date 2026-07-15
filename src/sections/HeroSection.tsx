@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Button from '../components/Button'
 
 const socialLinks = [
@@ -60,8 +60,8 @@ export default function HeroSection() {
             <Button href="#projects" variant="primary" className="min-w-[10rem]">
               View Projects
             </Button>
-            <Button href="/resume.pdf" variant="secondary" className="min-w-[10rem]">
-              Download Resume
+            <Button href="mailto:tanishkatawate@gmail.com?subject=Resume Request" variant="secondary" className="min-w-[10rem]">
+              Resume
             </Button>
           </div>
 
@@ -71,7 +71,7 @@ export default function HeroSection() {
                 key={social.label}
                 href={social.href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-3xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-white/20 hover:text-text"
               >
                 <span className="font-semibold text-primary">{social.label}</span>
