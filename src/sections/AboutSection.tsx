@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import DeveloperWorkspace from '../components/DeveloperWorkspace'
 import SectionHeading from '../components/SectionHeading'
 
 const infoCards = [
@@ -14,26 +15,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="rounded-[2.5rem] border border-white/10 bg-surface/90 p-6 shadow-[0_30px_80px_rgba(0,0,0,0.16)] sm:p-10">
       <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/5 via-white/10 to-white/5 p-6 shadow-[0_30px_80px_rgba(0,0,0,0.14)]"
-        >
-          <div className="absolute left-0 top-0 h-28 w-28 rounded-full bg-primary/15 blur-3xl" />
-          <div className="absolute right-4 top-20 h-20 w-20 rounded-full bg-secondary/15 blur-3xl" />
-          <div className="relative grid h-full gap-6 rounded-[1.75rem] bg-background/90 p-6">
-            <div className="flex h-24 items-center justify-center rounded-3xl border border-white/10 bg-white/5 text-xl font-semibold tracking-[0.12em] text-text">
-              Illustration
-            </div>
-            <div className="space-y-4 text-slate-300">
-              <div className="h-4 w-32 rounded-full bg-white/10" />
-              <div className="h-4 w-24 rounded-full bg-white/10" />
-              <div className="h-4 w-28 rounded-full bg-white/10" />
-            </div>
-          </div>
-        </motion.div>
+        <DeveloperWorkspace />
 
         <div className="space-y-8">
           <motion.div

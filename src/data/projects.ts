@@ -1,7 +1,7 @@
-import screenshotCollege from '../assets/project-screenshots/college-discovery-platform.svg'
-import screenshotSmartRoute from '../assets/project-screenshots/smart-route-optimizer.svg'
-import screenshotSpotifyClone from '../assets/project-screenshots/spotify-clone.svg'
-import screenshotPortfolioBuilder from '../assets/project-screenshots/portfolio-builder.svg'
+import screenshotCollege from '../assets/project-screenshots/college-discovery.png'
+import screenshotSmartRoute from '../assets/project-screenshots/SMART-ROUTE.jpeg'
+import screenshotSpotifyClone from '../assets/project-screenshots/Spotify.jpeg'
+import screenshotPortfolioBuilder from '../assets/project-screenshots/Portfolio-builder.png'
 
 export type Project = {
   title: string
@@ -20,6 +20,22 @@ export type Project = {
 }
 
 export const featuredProjects: Project[] = [
+  {
+    title: 'Portfolio Builder',
+    imageLabel: 'Design Studio',
+    screenshotUrl: screenshotPortfolioBuilder,
+    screenshotAlt: 'Portfolio builder interface screenshot',
+    problem: 'Early-career developers need a faster way to create polished personal portfolios.',
+    solution:
+      'A portfolio scaffolding concept focused on reusable sections, responsive design, and easy customization.',
+    details:
+      'A portfolio generator prototype built to help create clean developer presentations with minimal setup.',
+    features: ['Customizable sections', 'Responsive design', 'Clean templates', 'Developer-first UX'],
+    stack: ['React', 'Tailwind CSS', 'TypeScript'],
+    challenges: 'Delivering strong design flexibility while keeping the builder interface simple.',
+    architecture: 'Modular React components for portfolio sections and responsive layout templates.',
+    githubUrl: 'https://github.com/Tanishka-code/portfolio-builder',
+  },
   {
     title: 'College Discovery Platform',
     imageLabel: 'Campus AI',
@@ -67,22 +83,6 @@ export const featuredProjects: Project[] = [
     challenges: 'Balancing visual polish with a lightweight interface and smooth interactions.',
     architecture: 'Single-page React layout with animated components and media-focused visuals.',
     githubUrl: 'https://github.com/Tanishka-code/spotify-clone',
-  },
-  {
-    title: 'Portfolio Builder',
-    imageLabel: 'Design Studio',
-    screenshotUrl: screenshotPortfolioBuilder,
-    screenshotAlt: 'Portfolio builder interface screenshot',
-    problem: 'Early-career developers need a faster way to create polished personal portfolios.',
-    solution:
-      'A portfolio scaffolding concept focused on reusable sections, responsive design, and easy customization.',
-    details:
-      'A portfolio generator prototype built to help create clean developer presentations with minimal setup.',
-    features: ['Customizable sections', 'Responsive design', 'Clean templates', 'Developer-first UX'],
-    stack: ['React', 'Tailwind CSS', 'TypeScript'],
-    challenges: 'Delivering strong design flexibility while keeping the builder interface simple.',
-    architecture: 'Modular React components for portfolio sections and responsive layout templates.',
-    githubUrl: 'https://github.com/Tanishka-code/portfolio-builder',
   },
 ]
 

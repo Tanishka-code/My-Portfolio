@@ -24,12 +24,18 @@ export default function ProjectCard({ project, onSelect }: ProjectCardProps) {
       transition={{ duration: 0.3, ease: 'easeOut' }}
       className="cursor-pointer overflow-hidden rounded-[2rem] border border-white/10 bg-background/95 shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
     >
-      <div className="relative h-72 overflow-hidden bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.28),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(96,165,250,0.25),_transparent_30%)]" />
-        <div className="relative flex h-full items-end justify-start p-6">
-          <div className="rounded-3xl border border-white/10 bg-surface/90 px-4 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-text shadow-[0_20px_50px_rgba(0,0,0,0.2)]">
-            {project.imageLabel}
-          </div>
+      <div className="relative h-72 overflow-hidden">
+        <img
+          src={project.screenshotUrl}
+          alt={project.screenshotAlt}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.2),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(96,165,250,0.18),_transparent_36%)]" />
+        <div className="absolute bottom-6 left-6 rounded-3xl border border-white/15 bg-slate-950/70 px-4 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.28)] backdrop-blur">
+          {project.imageLabel}
         </div>
       </div>
 
